@@ -10,5 +10,4 @@ import { useCounterStore } from '@/stores/auth'
 const auth = useCounterStore()
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>

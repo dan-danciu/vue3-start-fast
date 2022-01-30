@@ -1,13 +1,13 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import Home from '@/views/Home.vue'
-import Login from '@/views/Login.vue'
+import HomePage from '@/views/HomePage.vue'
+import LoginPage from '@/views/LoginPage.vue'
 import { useCounterStore } from '@/stores/auth'
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: Home,
+    component: HomePage,
     beforeEnter: (to, from, next) => {
       const auth = useCounterStore()
       if (!auth.isAuthenticated) next({ name: 'login' })
@@ -17,7 +17,7 @@ const routes = [
   {
     path: '/login',
     name: 'login',
-    component: Login,
+    component: LoginPage,
     beforeEnter: (to, from, next) => {
       const auth = useCounterStore()
       if (auth.isAuthenticated) next({ name: 'home' })
